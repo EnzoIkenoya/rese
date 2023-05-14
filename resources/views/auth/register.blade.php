@@ -1,59 +1,64 @@
+@extends('layouts.default')
+
+@section('title')
+会員登録
+@endsection
+
+@push('css')
+<link rel="stylesheet" href="{{ asset('css/auth/common.css') }}">
+@endpush
+
+@section('content')
+
 <x-guest-layout>
     <x-auth-card>
-        <x-slot name="logo">
-            <a href="/">
-                <x-application-logo class="w-20 h-20 fill-current text-gray-500" />
-            </a>
-        </x-slot>
+        <x-slot name="logo" class="logo"></x-slot>
 
-        <!-- Validation Errors -->
-        <x-auth-validation-errors class="mb-4" :errors="$errors" />
+        <div class="auth-common__form">
+            <p class="auth-common__form-title">Registration</p>
+            <div class="auth-common__form-item">
 
-        <form method="POST" action="{{ route('register') }}">
-            @csrf
+                <form method="POST" action="{{ route('register') }}">
+                    @csrf
 
-            <!-- Name -->
-            <div>
-                <x-label for="name" :value="__('Name')" />
+                    <!-- Name -->
+                    <div class="auth-common__name-wrap">
+                        <input type="text" id="name" class="auth-common__name" name="name" placeholder="Username" value="{{ old('name') }}" required />
+                    </div>
+                    @error('name')
+                    <div class="validation__error-red">
+                        <p>Error:{{$message}}</p>
+                    </div>
+                    @enderror
 
-                <x-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus />
+                    <!-- Email Address -->
+                    <div class="auth-common__email-wrap">
+                        <input id="email" class="auth-common__address" type="email" name="email" placeholder="Email" value="{{ old('email') }}" required />
+                    </div>
+                    @error('email')
+                    <div class="validation__error-red">
+                        <p>Error:{{ $maesage }}</p>
+                    </div>
+                    @enderror
+
+                    <!-- Password -->
+                    <div class="auth-common__pass-wrap">
+                        <input id="password" class="auth-common__password" type="password" name="password" required autocomplete="new-password" placeholder="password" />
+                    </div>
+                    @error('password')
+                    <div class="validation__error-red">
+                        <p>Error:{{ $message }}</p>
+                    </div>
+                    @enderror
+
+                    <div class="auth-common__submit-wrap">
+                        <button class="auth-common__submit">登録</button>
+                    </div>
+
+                </form>
+
             </div>
-
-            <!-- Email Address -->
-            <div class="mt-4">
-                <x-label for="email" :value="__('Email')" />
-
-                <x-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required />
-            </div>
-
-            <!-- Password -->
-            <div class="mt-4">
-                <x-label for="password" :value="__('Password')" />
-
-                <x-input id="password" class="block mt-1 w-full"
-                                type="password"
-                                name="password"
-                                required autocomplete="new-password" />
-            </div>
-
-            <!-- Confirm Password -->
-            <div class="mt-4">
-                <x-label for="password_confirmation" :value="__('Confirm Password')" />
-
-                <x-input id="password_confirmation" class="block mt-1 w-full"
-                                type="password"
-                                name="password_confirmation" required />
-            </div>
-
-            <div class="flex items-center justify-end mt-4">
-                <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('login') }}">
-                    {{ __('Already registered?') }}
-                </a>
-
-                <x-button class="ml-4">
-                    {{ __('Register') }}
-                </x-button>
-            </div>
-        </form>
+        </div>
     </x-auth-card>
 </x-guest-layout>
+@endsection

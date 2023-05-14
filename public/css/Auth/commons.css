@@ -1,0 +1,97 @@
+.auth-common__form {
+  width: 350px;
+  border-radius: 5px;
+  margin: 100px auto;
+  box-shadow: 1px 1px 3px -1px;
+  z-index: 2;
+}
+
+.auth-common__form-title {
+  background-color: rgb(53, 96, 246);
+  border-radius: 5px 5px 0 0;
+  color: white;
+  margin: 0;
+  padding: 15px;
+}
+
+.auth-common__form-item {
+  padding: 10px;
+  background-color: white;
+  border-radius: 0 0 5px 5px;
+}
+
+.auth-common__name,
+.auth-common__address,
+.auth-common__password {
+  border: none;
+  border-bottom: 1px solid black;
+  display: block;
+  width: 80%;
+}
+
+.auth-common__name-wrap,
+.auth-common__email-wrap,
+.auth-common__pass-wrap {
+  position: relative;
+  margin-top: 18px;
+  left: 45px;
+}
+
+.auth-common__name-wrap::before {
+  content: "";
+  position: absolute;
+  background: url(../../images/username.png);
+  background-size: cover;
+  vertical-align: middle;
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  bottom: 0;
+  left: -30px;
+}
+
+.auth-common__email-wrap::before {
+  content: "";
+  position: absolute;
+  background: url(../../images/email.png);
+  background-size: cover;
+  vertical-align: middle;
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  bottom: 0;
+  left: -30px;
+}
+
+.auth-common__pass-wrap::before {
+  content: "";
+  position: absolute;
+  background: url(../../images/password.png);
+  background-size: cover;
+  vertical-align: middle;
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  bottom: 0;
+  left: -30px;
+}
+
+.auth-common__submit-wrap {
+  margin: 20px 20px 0 0;
+  text-align: right;
+}
+
+.auth-common__submit {
+  background-color: rgb(53, 96, 246);
+  color: white;
+  font-weight: bold;
+  padding: 5px 15px;
+  border-radius: 3px;
+  border: none;
+}
+
+.validation__error-red {
+  color: red;
+  font-size: 14px;
+  margin: 10px 15px;
+}

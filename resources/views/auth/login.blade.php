@@ -1,56 +1,58 @@
+@extends('layouts.default')
+
+@section('title')
+ログイン
+@endsection
+
+@push('css')
+<link rel="stylesheet" href="{{ asset('css/auth/common.css') }}">
+@endpush
+
+@section('content')
+
 <x-guest-layout>
     <x-auth-card>
-        <x-slot name="logo">
-            <a href="/">
-                <x-application-logo class="w-20 h-20 fill-current text-gray-500" />
-            </a>
-        </x-slot>
+        <x-slot name="logo" class="logo"></x-slot>
 
         <!-- Session Status -->
         <x-auth-session-status class="mb-4" :status="session('status')" />
 
-        <!-- Validation Errors -->
-        <x-auth-validation-errors class="mb-4" :errors="$errors" />
+        <div class="auth-common__form">
+            <p class="auth-common__form-title">Login</p>
+            <div class="auth-common__form-item">
 
-        <form method="POST" action="{{ route('login') }}">
-            @csrf
+                <form method="post" action="{{ route('login') }}">
+                    @csrf
 
-            <!-- Email Address -->
-            <div>
-                <x-label for="email" :value="__('Email')" />
+                    <!-- Email Address -->
+                    <div class="auth-common__email-wrap">
+                        <input id="email" class="auth-common__address" type="email" name="email" placeholder="Email" value="{{ old('email') }}" required />
+                    </div>
 
-                <x-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autofocus />
+                    <!-- Password -->
+                    <div class="auth-common__pass-wrap">
+                        <input id="password" class="auth-common__password" type="password" name="password" required autocomplete="new-password" placeholder="Password" />
+                    </div>
+
+                    @error('email')
+                    <div class="validation__error-red">
+                        <p>Error:{{ $message }}</p>
+                    </div>
+                    @enderror
+                    @error('password')
+                    <div class="validation__error-red">
+                        <p>Error:{{ $message }}</p>
+                    </div>
+                    @enderror
+
+                    <div class="auth-common__submit-wrap">
+                        <button class="auth-common__submit">ログイン</button>
+                    </div>
+                </form>
+
             </div>
+        </div>
 
-            <!-- Password -->
-            <div class="mt-4">
-                <x-label for="password" :value="__('Password')" />
-
-                <x-input id="password" class="block mt-1 w-full"
-                                type="password"
-                                name="password"
-                                required autocomplete="current-password" />
-            </div>
-
-            <!-- Remember Me -->
-            <div class="block mt-4">
-                <label for="remember_me" class="inline-flex items-center">
-                    <input id="remember_me" type="checkbox" class="rounded border-gray-300 text-indigo-600 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" name="remember">
-                    <span class="ml-2 text-sm text-gray-600">{{ __('Remember me') }}</span>
-                </label>
-            </div>
-
-            <div class="flex items-center justify-end mt-4">
-                @if (Route::has('password.request'))
-                    <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('password.request') }}">
-                        {{ __('Forgot your password?') }}
-                    </a>
-                @endif
-
-                <x-button class="ml-3">
-                    {{ __('Log in') }}
-                </x-button>
-            </div>
-        </form>
     </x-auth-card>
 </x-guest-layout>
+@endsection

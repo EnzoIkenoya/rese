@@ -1,0 +1,328 @@
+.detail__main {
+  width: 100%;
+  padding: 30px 80px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+}
+
+/* 詳細 */
+.detail__store {
+  width: 40%;
+  box-sizing: border-box;
+  display: inline-block;
+}
+
+.detail__store-name {
+  font-size: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.detail__store-name a {
+  background-color: #fff;
+  box-shadow: 1px 1px 3px -1px;
+  text-decoration: none;
+  padding: 5px 8px;
+  color: black;
+  border-radius: 4px;
+  font-size: 14px;
+  position: relative;
+  bottom: 3px;
+  cursor: pointer;
+}
+
+.detail__store-name h2 {
+  display: inline-block;
+  margin-left: 3px;
+  margin-bottom: 10px;
+}
+
+.favorite__btn {
+  background-color: rgb(238, 238, 238);
+  border: none;
+  cursor: pointer;
+}
+
+.detail__store img {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.detail__store-item {
+  margin-bottom: 20px;
+  font-size: 14px;
+}
+
+.detail__store-area,
+.detail__store-genre {
+  display: inline-block;
+}
+
+.detail__store-info {
+  line-height: 25px;
+  font-size: 14px;
+}
+
+.detail__store-course {
+  margin-top: 20px;
+  line-height: 25px;
+}
+
+.detail__store-course h3 {
+  font-size: 16px;
+}
+
+.detail__closed-date {
+  margin-top: 20px;
+}
+
+.detail__closed-date h3:nth-of-type(2) {
+  margin-top: 10px;
+}
+
+.closed-date__wrap {
+  padding: 5px;
+  font-size: 16px;
+  font-weight: 100;
+}
+
+.closed-date__month {
+  padding-bottom: 5px;
+}
+
+.closed-date__date {
+  padding-left: 18px;
+  font-size: 14px;
+}
+
+.closed-date__date p {
+  display: inline-block;
+  padding-right: 5px;
+  font-size: 14px;
+}
+
+/* 予約 */
+.detail__reserve {
+  width: 50%;
+  height: 657px;
+  background-color: rgb(53, 96, 246);
+  box-shadow: 1px 1px 3px -1px;
+  border-radius: 4px;
+  margin-top: -80px;
+  display: inline-block;
+  box-sizing: border-box;
+  display: inline-block;
+}
+
+.detail__reserve-wrap {
+  padding: 30px;
+}
+
+.reserve__title {
+  color: #fff;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.reserve__date {
+  display: block;
+  width: 40%;
+  margin-top: 20px;
+  padding: 3px;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.detail__reserve select {
+  display: block;
+  width: 100%;
+  height: 25px;
+  margin-top: 15px;
+  padding: 3px;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+
+
+.reserve__submit {
+  background-color: rgb(0, 63, 245);
+  color: white;
+  border-radius: 3px;
+  border: none;
+  width: 100%;
+  text-align: center;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  cursor: pointer;
+}
+
+.overflow-scroll {
+  margin-top: 10px;
+  width: 250px;
+  height: 312px;
+  overflow-y: scroll;
+}
+
+.detail__reserve-card {
+  background-color: rgb(85, 128, 247);
+  margin-top: 15px;
+  padding: 20px;
+  border-radius: 3px;
+  color: #fff;
+  font-size: 14px;
+}
+
+.detail__reserve-card th {
+  width: 100px;
+  padding: 10px 0;
+  text-align: left;
+}
+
+.detail__reserve-card td {
+  padding: 10px 0;
+  text-align: left;
+}
+
+.validation__error-red {
+  color: rgb(241, 60, 60);
+  font-weight: bold;
+  margin-top: 15px;
+}
+
+/* レビュー */
+.detail__store-comment {
+  margin: 100px auto 30px;
+  text-align: center;
+}
+
+.detail__store-comment h2 {
+  font-size: 20px;
+}
+
+.store-comment__wrap {
+  margin-bottom: 40px;
+}
+
+.store-comment__star {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: center;
+}
+
+.store-comment__star input[type=radio] {
+  display: none;
+}
+
+.store-comment__star label {
+  position: relative;
+  padding: 0 5px;
+  color: #ccc;
+  cursor: pointer;
+  font-size: 35px;
+}
+
+.store-comment__star label:hover {
+  color: #ffcc00;
+}
+
+.store-comment__star label:hover~label {
+  color: #ffcc00;
+}
+
+.store-comment__star input[type=radio]:checked~label {
+  color: #ffcc00;
+}
+
+.store-comment__comment {
+  margin-top: 20px;
+  margin-bottom: 10px;
+  border: none;
+  border-radius: 5px;
+  padding: 5px;
+  width: 70%;
+}
+
+.detail__store-comment button {
+  display: block;
+  background-color: rgb(53, 96, 246);
+  color: white;
+  border-radius: 3px;
+  border: none;
+  text-align: center;
+  padding: 5px 10px;
+  cursor: pointer;
+  margin: 10px auto 0;
+}
+
+.detail__comment-item {
+  padding: 30px;
+  border-bottom: 1px solid #a09a9a;
+  width: 70%;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.detail__comment-wrap {
+  display: flex;
+  justify-content: space-between;
+}
+
+.detail__comment-date {
+  font-size: 14px;
+}
+
+.detail__comment-name {
+  font-size: 10px;
+  margin-top: 10px;
+}
+
+.detail__comment-comment {
+  margin-top: 10px;
+}
+
+.detail__comment-star--yellow {
+  font-size: 24px;
+  color: #ffcc00;
+}
+
+.detail__comment-star--gray {
+  font-size: 24px;
+  color: #ccc;
+}
+
+@media screen and (max-width: 768px) {
+  .detail__main {
+    text-align: center;
+    display: inline-block;
+    padding: 30px 10px;
+  }
+
+  .detail__store {
+    width: 100%;
+    max-width: 400px;
+    justify-content: center;
+    text-align: left;
+  }
+
+  .detail__reserve {
+    width: 100%;
+    max-width: 400px;
+    margin: 30px 0;
+  }
+
+  .reserve__date {
+    width: 98%;
+  }
+
+  .detail__reserve select {
+    width: 100%;
+  }
+
+  .overflow-scroll {
+    width: 100%;
+  }
+}

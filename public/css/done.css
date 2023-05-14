@@ -1,0 +1,26 @@
+.done__box {
+  width: 350px;
+  border-radius: 5px;
+  box-shadow: 1px 1px 3px -1px;
+  margin: 20px auto;
+  padding: 80px 30px;
+  background-color: #fff;
+  text-align: center;
+}
+
+.done__box p {
+  font-size: 18px;
+}
+
+.done__box a {
+  display: inline-block;
+  background-color: rgb(53, 96, 246);
+  color: white;
+  padding: 6px 15px;
+  border-radius: 3px;
+  border: none;
+  text-decoration: none;
+  margin-top: 40px;
+  text-align: center;
+  font-size: 14px;
+}

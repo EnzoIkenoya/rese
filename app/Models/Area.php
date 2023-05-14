@@ -9,9 +9,8 @@ class Area extends Model
 {
     use HasFactory;
     
-    protected $fillable = ['name'];
+    protected $guarded = ['id'];
 
-    public function restaurants(){
-    return $this->hasMany('App\Models\Restaurant');
+    protected $fillable = ['name'];
     }
-}
+

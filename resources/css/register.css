@@ -1,0 +1,100 @@
+body {
+  background-color: rgb(238, 238, 238);
+  padding: 10px 80px;
+}
+
+.register__form {
+  width: 350px;
+  border-radius: 5px;
+  margin: 100px auto;
+  box-shadow: 2px 2px 2px -1px;
+  z-index: 2;
+}
+
+.register__form-title {
+  background-color: rgb(53, 96, 246);
+  border-radius: 5px 5px 0 0;
+  color: white;
+  margin: 0;
+  padding: 15px;
+}
+
+.register__form-item {
+  padding: 10px;
+  background-color: white;
+  border-radius: 0 0 5px 5px;
+}
+
+.register__name,
+.register__address,
+.register__password {
+  border: none;
+  border-bottom: 1px solid black;
+  display: block;
+  width: 80%;
+}
+
+.register__name-wrap,
+.register__email-wrap,
+.register__pass-wrap {
+  position: relative;
+  margin-top: 18px;
+  left: 45px;
+}
+
+.register__name-wrap::before {
+  content: "";
+  position: absolute;
+  background: url(../images/username.png);
+  background-size: cover;
+  vertical-align: middle;
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  bottom: 0;
+  left: -30px;
+}
+
+.register__email-wrap::before {
+  content: "";
+  position: absolute;
+  background: url(../images/email.png);
+  background-size: cover;
+  vertical-align: middle;
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  bottom: 0;
+  left: -30px;
+}
+
+.register__pass-wrap::before {
+  content: "";
+  position: absolute;
+  background: url(../images/password.png);
+  background-size: cover;
+  vertical-align: middle;
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  bottom: 0;
+  left: -30px;
+}
+
+.register__submit-wrap {
+  margin: 20px 20px 0 0;
+  text-align: right;
+}
+
+.register__submit {
+  background-color: rgb(53, 96, 246);
+  color: white;
+  font-weight: bold;
+  padding: 5px 15px;
+  border-radius: 3px;
+  border: none;
+}
+
+.validation__error-red {
+  color: red;
+}
